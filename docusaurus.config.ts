@@ -1,66 +1,66 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
   title: "Sam's Homelab Documentation",
-  tagline: "An attempt at a comprehensive record of what's going on in my homelab; and other personal tech project things.",
-  favicon: 'img/favicon.ico',
+  tagline:
+    "An attempt at a comprehensive record of what's going on in my homelab; and other personal tech project things.",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://samywamy10.github.io',
+  url: "https://samywamy10.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/homelab-docs/',
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'samywamy10', // Usually your GitHub org/user name.
-  projectName: 'homelab-docs', // Usually your repo name.
-  deploymentBranch: 'main',
+  organizationName: "samywamy10", // Usually your GitHub org/user name.
+  projectName: "homelab-docs", // Usually your repo name.
+  deploymentBranch: "main",
   trailingSlash: false,
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Samywamy10/homelab-docs/edit/main/',
+          editUrl: "https://github.com/Samywamy10/homelab-docs/edit/main/",
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
@@ -68,41 +68,41 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "Sam's Homelab",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: "My Site Logo",
+        src: "img/logo.svg",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "Docs",
         },
-        {to: '/blog', label: 'Notes', position: 'left'},
+        { to: "/blog", label: "Notes", position: "left" },
         {
-          href: 'https://github.com/Samywamy10/homelab-docs',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/Samywamy10/homelab-docs",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Sam',
+          title: "Sam",
           items: [
             {
-              label: 'samjwright.com',
-              href: 'https://samjwright.com',
+              label: "samjwright.com",
+              href: "https://samjwright.com",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/samywamy10',
+              label: "GitHub",
+              href: "https://github.com/samywamy10",
             },
           ],
         },
