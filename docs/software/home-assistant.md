@@ -81,6 +81,21 @@ Unfortunately if you connect to your printer via the cloud (which is required fo
 
 Should this go in hardware section?
 
+# Tips and tricks
+## Escape out of the HAOS console
+Run `login`
+
+## Running out of space?
+Go to the Console of the HAOS VM in Proxmox, and type `login` to escape out of the HAOS CLI. Then run `du -sh */` to see the size of each folder in the current directory. Keep navigating down to find the biggest folders.
+
+### Common culprits
+- `/mnt/data/supervisor/addons/data` -> esphome build cache. Can clean up by going to esphome device builder addon, clicking on a device's 3 dots and "Clean build files"
+- `/mnt/data/supervisor/backup` -> nothing to clean up here
+- `/mnt/data/supervisor/homeassistant` -> can delete any "corrupt" files
+
+### Identify broken automations etc.
+Use [Spook](https://spook.boo/)
+
 ## Custom integrations
 
 - [ ] CubeCoders AMP

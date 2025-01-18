@@ -9,7 +9,18 @@ sidebar_position: 3
 ## Living Room Controls
 On either side of the couch my partner and I often need to control a couple of different devices in the home. While we can control all of these via HomeKit to Home Assistant, sometimes your phone isn't on you or in an awkward position - or we have guests over who aren't in our HomeKit Home. For these cases I wanted an easy to use and conveniently accessible remote control for a few commonly used devices.
 
-I designed and developed this screen for a 1.28" touch screen like [this one on Ali Express](https://www.aliexpress.com/item/1005005952879057.html?algo_pvid=2f89163d-82d7-43ea-a8b5-50c155c70cc0&algo_exp_id=2f89163d-82d7-43ea-a8b5-50c155c70cc0-0&pdp_npi=4@dis!AUD!19.98!12.39!!!13.38!8.30!@2140d2dc17248511797392848e0db9!12000035566548050!sea!AU!2612975283!X&curPageLogUid=K2GqyHuYsMWy&utparam-url=scene:search%7Cquery_from:), which is just $9.29AUD at the moment 🤯.
+I designed and developed this screen for a 1.28" touch screen like [this one on Ali Express](https://www.aliexpress.com/item/1005005952879057.html?algo_pvid=2f89163d-82d7-43ea-a8b5-50c155c70cc0&algo_exp_id=2f89163d-82d7-43ea-a8b5-50c155c70cc0-0&pdp_npi=4@dis!AUD!19.98!12.39!!!13.38!8.30!@2140d2dc17248511797392848e0db9!12000035566548050!sea!AU!2612975283!X&curPageLogUid=K2GqyHuYsMWy&utparam-url=scene:search%7Cquery_from:), which is just $9 AUD at the moment 🤯.
+
+Of note with this type of screen is there are three physical buttons on the right hand side. Pressing the middle button turns the screen on. The bottom button puts it into pairing mode.
+
+To disable the need to press the middle button on power on to turn the screen on, you can jump/short the J1 jumper pad.
+
+![YourCee Screen J1 Jumper pad](./img/yourcee-screen-j1.jpeg)
+
+From the seller:
+> The power switch button is in the off state by default when powered on. In this state, the battery can be charged and the serial port cannot be recognized. The ESP32, TFT screen, and TF card power supply are in the off state. Users can switch to the power on working state through the J1 jumper pad, and the button function will be disabled. The following picture is for reference by users after short circuiting.
+
+Here's the screen in action:
 
 ![ESPHome Living Room Controls](./img/esphome-living-room-controls.JPG)
 
@@ -72,7 +83,7 @@ I've always wanted to have an easy to see train timetable near the door. I know 
 
 I really like the look of e-ink or e-paper displays. Using the same technology as a Kindle screen, they look a lot less "techy" and more like a poster or some furniture.
 
-So I combined these two concepts and programmed (also using LVGL) [a small eink display](https://www.aliexpress.com/item/1005003063164032.html) to show the next 3 train departures from my local train station.
+So I combined these two concepts and programmed (also using [LVGL](https://esphome.io/components/lvgl/)) [a small eink display](https://www.aliexpress.com/item/1005003063164032.html) to show the next 3 train departures from my local train station.
 
 Every minute Home Assistant calls the transport department's API to check live train departures, which I parse into 3 text input variables and then [display on the screen](https://github.com/Samywamy10/esphome-scripts/blob/main/eink.yaml).
 
