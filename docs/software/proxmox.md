@@ -45,6 +45,8 @@ My current backup strategy is nightly backups of each VM and LXC. I don't backup
 ## Past troubleshooting I might want to refer back to
 
 ### Mounting an SMB share (ie NAS)
+**Update 19/01/25:** Apparently should be able to use this [Gist](https://gist.github.com/NorkzYT/14449b247dae9ac81ba4664564669299)
+
 [This thread](https://forum.proxmox.com/threads/tutorial-unprivileged-lxcs-mount-cifs-shares.101795/) is the source of truth.
 
 #### On the host (first time only)

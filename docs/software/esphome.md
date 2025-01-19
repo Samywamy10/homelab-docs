@@ -93,8 +93,12 @@ This screen has been super helpful and I look at it pretty much every time I nee
 
 ## IR Sender for air con
 
-Coming soon
+I connected a Lolin S2 Mini ESP32 to an IR diode and then used the [Climate](https://esphome.io/components/climate/index.html) platform from ESPHome in [my script](https://github.com/Samywamy10/esphome-scripts/blob/main/irsender.yaml) to control my Hitachi air conditioner via the [`heatpumpir` platform](https://esphome.io/components/climate/climate_ir.html#arduino-heatpumpir) as the default Hitachi platform wasn't working for me.
+
+Actually sourcing the IR diode was surprisingly difficult and I found it finicky to work with. I believe I used this [IR Transmitter from Jaycar](https://www.jaycar.com.au/duinotech-arduino-compatible-infrared-transmitter-module/p/XC4426) - note it takes a 5V input.
+
+You want to make sure you're passing in a temperature sensor so the Climate entity produced by the ESPHome also reports the "current" temperature (in addition to the "target").
 
 ## Presences sensors/Bluetooth Proxies
 
-Coming soon
+Finally I have a number of Bluetooth proxies - both standalone devices as well as any device above which has Bluetooth. This has not only the benefit of extending the Bluetooth range of any device connected to Home Assistant (just the front door lock for now), but is also used with [Bermuda](https://github.com/agittins/bermuda) and my partner and I's Apple Watches to track which room we are in. I don't do anything with this information at the moment but hope to combine this with the mmwave presence sensors in each room to do different actions depends on who is in which room.
