@@ -100,3 +100,7 @@ Use [Spook](https://spook.boo/)
 
 - [ ] CubeCoders AMP
 - [ ] VicEmergency
+
+## TODO
+
+- Switch manager for dials? https://github.com/Sian-Lee-SA/Home-Assistant-Switch-Manager
