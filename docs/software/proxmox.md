@@ -55,7 +55,9 @@ My current backup strategy is nightly backups of each VM and LXC. I don't backup
 
 I have two active instances of Proxmox Backup Server (PBS), one locally and one remote. These are connected via [Sync Jobs](https://pbs.proxmox.com/docs/managing-remotes.html) each way (ie Local VMs & LXCs sync to Remote; Remote VMs & LXCs to Local).
 
-Each night at 4:00am, all VMs and LXCs backup to Proxmox Backup Server. Then at 5am, the sync job starts to sync with the remote PBS. This gives me two copies of each instance at any given time, which will be at most 23 hours 59 minutes out of date.
+PBS is great as it runs Garbage Collection (I have it configured to run at 5:00am every night) which removes any duplicate files. E.g. if you're backing up Home Assistant, it'll only keep the files in subsequent backups which it doesn't have saved in previous backups. This means if you have 1 backup that's 4gb and you backup a 2nd copy, it doesn't take up 8gb, it might take up 4.2gb. This ratio of data saving is known as the Deduplication factor and mine currently sits between 5 and 8 (so I can save 5-8 backups in the space that 1 would have otherwise taken up).
+
+Each night at 4:00am, all VMs and LXCs backup to Proxmox Backup Server. Then, every hour, the sync job starts to sync with the remote PBS. This gives me two copies of each instance at any given time, which will be at most 23 hours 59 minutes out of date.
 
 | PBS Name                  | Location | Instance             |
 | ------------------------- | -------- | -------------------- |
@@ -145,9 +147,6 @@ __lxc_start: 2034 Failed to initialize container "104"
 can run `pct start 104 --debug` to see logs
 
 If issue is something like `can't read superblock on /dev/loop0`, do `pct fsck 104`. Then start again, should fix.
-
-### Proxmox backup server
-Setup SMB mount: https://forum.proxmox.com/threads/pbs-mounting-windows-smb-share-as-datastore.113164/post-498887
 
 ### VM or LXC is dying
 Use `journalctl -xe` to see errors in host
