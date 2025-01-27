@@ -39,3 +39,7 @@ making up a raidz1 ZFS pool with 32TB effective storage.
 | Switch  | Unifi Flex Mini        | Entertainment Unit |
 | Wifi AP | Unifi U7 Pro           | Living Room        |
 | Wifi AP | Unifi U6 Lite          | Basement           |
+
+## TODO
+- [ ] Raspberry Pi 4B?
+- [ ] Cool idea: https://www.reddit.com/r/homeassistant/comments/1i9esrn/docking_tablet_remote/

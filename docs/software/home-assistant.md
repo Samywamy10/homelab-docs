@@ -93,14 +93,59 @@ Go to the Console of the HAOS VM in Proxmox, and type `login` to escape out of t
 - `/mnt/data/supervisor/backup` -> nothing to clean up here
 - `/mnt/data/supervisor/homeassistant` -> can delete any "corrupt" files
 
-### Identify broken automations etc.
+## Identify broken automations etc.
 Use [Spook](https://spook.boo/)
 
-## Custom integrations
+## Updating Home Assistant docker manually (Debian)
+- `sudo docker pull ghcr.io/home-assistant/home-assistant:stable`
+- `sudo docker stop homeassistant`
+- `sudo docker rm homeassistant`
+- `sudo docker run -d   --name homeassistant   --restart=unless-stopped   --privileged   -e TZ=MY_TIME_ZONE   -v /home/sam/ha-config:/config   -v /run/dbus:/run/dbus:ro   --network=host   ghcr.io/home-assistant/home-assistant:stable`
+
+## Custom SSH script to expose zpool status information
+
+```yaml
+- command: /usr/sbin/zpool list -H -o capacity Pool | awk '{print $1}' | tr -d '%'
+  scan_interval: 600
+  sensors:
+    - key: zpool_capacity
+      name: Zpool Capacity
+      type: number
+      unit_of_measurement: "%"
+- command: /usr/sbin/zpool list -H -o free Pool | sed 's/T//'
+  scan_interval: 600
+  sensors:
+    - key: zpool_free
+      name: Zpool Free
+      type: number
+      unit_of_measurement: TB
+- command: /usr/sbin/zpool list -H -o size Pool | sed 's/T//'
+  scan_interval: 3600
+  sensors:
+    - key: zpool_size
+      name: Zpool Size
+      type: number
+      unit_of_measurement: TB
+- command: /usr/sbin/zpool list -H -o allocated Pool | sed 's/T//'
+  scan_interval: 600
+  sensors:
+    - key: zpool_allocated
+      name: Zpool Allocated
+      type: number
+      unit_of_measurement: TB
+- command: /usr/sbin/zpool list -H -o health Pool
+  scan_interval: 600
+  sensors:
+    - key: zpool_health
+      name: Zpool Health
+      type: text
+```
+
+# Custom integrations
 
 - [ ] CubeCoders AMP
 - [ ] VicEmergency
 
-## TODO
+# TODO
 
 - Switch manager for dials? https://github.com/Sian-Lee-SA/Home-Assistant-Switch-Manager
