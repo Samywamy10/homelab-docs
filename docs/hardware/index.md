@@ -30,6 +30,11 @@ NAS
 - 2x 2tb SSDs
 - 1tb nvme drive (BOOT)
 
+### PCIE passthroughs
+- 06:00 - SATA controller for 5x of the ports
+- 00:17 - Intel SATA controller for 1x of the ports (currently the right-most 16tb HDD)
+- 05:00 - Aquantia 10g controller
+
 ## Networking
 
 | Type    | Model                  | Purpose            |

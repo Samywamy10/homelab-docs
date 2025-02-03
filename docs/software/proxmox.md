@@ -151,6 +151,14 @@ If issue is something like `can't read superblock on /dev/loop0`, do `pct fsck 1
 ### VM or LXC is dying
 Use `journalctl -xe` to see errors in host
 
+### Expand zvol (for TrueNAS VM)
+1. Expand the zvol size in TrueNAS
+2. Restart TrueNAS
+3. Go into the VM (PBS) and run `cfdisk /dev/<driveToExpand>`
+4. Should see free space, select the partition to expand, select resize then confirm you want to expand to use free space.
+5. Select `Write` to confirm changes
+6. Then run `resize2fs /dev/<paritionToExpand>` -- NOTE SELECT PARTITION eg sdb1
+
 
 ## Future projects
 - [ ] Investigate node disk speeds. Do the nvme and SSD drives match with what I'd expect performance to be?
