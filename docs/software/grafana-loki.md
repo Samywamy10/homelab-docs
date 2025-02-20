@@ -18,6 +18,16 @@ Followed this guide: https://grafana.com/docs/loki/latest/setup/install/docker/#
 
 ### Setting up Alloy on client
 
+### ✨ Scripted ⭐
+
+Run this on Debian-based systems:
+
+```bash
+wget -qO- https://lab.samjwright.com/alloy-install.sh | bash -s <insert_journal_name>
+```
+
+#### Manual
+
 Basically follow the steps here: https://grafana.com/docs/alloy/latest/set-up/install/linux/
 
 1. Run commands at the top of this file: https://apt.grafana.com/ to add Grafana apt repository
