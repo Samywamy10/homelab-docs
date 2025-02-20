@@ -28,7 +28,7 @@ Basically follow the steps here: https://grafana.com/docs/alloy/latest/set-up/in
    1. `nano /etc/alloy/config.alloy`
    2. Replace the file with the following code:
 
-```terraform
+```hcl
 logging {
   level = "warn"
 }
