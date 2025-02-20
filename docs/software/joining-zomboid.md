@@ -6,11 +6,12 @@ To connect to the Zomboid server you'll need to connect to our private network. 
 2. Open Cloudflare WARP preferences
 ![Cloudflare WARP preferences](./img/cloudflare-preferences.png)
 3. Click on the "Account" tab and log in
-4. In the tab that opens, type your pre-approved email address in.
-5. You'll receive a one-time code email. Paste that in and log in.
-6. Make sure WARP is turned on
+4. In the team name, input `samjwright.com`
+5. In the tab that opens, type your pre-approved email address in.
+6. You'll receive a one-time code email. Paste that in and log in.
+7. Make sure WARP is turned on
 ![Cloudflare WARP turned on](./img/warp-on.png)
-7. In Zomboid, click `Join` in the menu and add a server with:
+1. In Zomboid, click `Join` in the menu and add a server with:
    - **Favorite name:** Whatever you wan to call the server
    - **IP address:** `192.168.86.194`.
    - **Port:** `16262` (this is the default)
