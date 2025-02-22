@@ -159,6 +159,10 @@ Use `journalctl -xe` to see errors in host
 5. Select `Write` to confirm changes
 6. Then run `resize2fs /dev/<paritionToExpand>` -- NOTE SELECT PARTITION eg sdb1
 
+### Can access internet but DNS not working (aka can't ping qualified domains like Google.com)
+Issue with Tailscale. Haven't figured it out yet, might be because LXCs/VMs inherit Node DNS settings which are connected to Tailscale so they can access remote Proxmox Backup Server.
+
+Anyway, can do `nano /etc/resolv.conf` and change `nameserver` to a public DNS server eg  `1.1.1.1` etc.
 
 ## Future projects
 - [ ] Investigate node disk speeds. Do the nvme and SSD drives match with what I'd expect performance to be?
