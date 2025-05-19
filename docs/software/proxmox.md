@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # 🟨 Proxmox
 
-Proxmox runs on each of the machines defined in [hardware](/docs/hardware#nodes). I always run the [Proxmox VE Post Install script](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install) after setting up a new Node, to remove subscription nag and perform updates.
+Proxmox runs on each of the machines defined in [hardware](/hardware#nodes). I always run the [Proxmox VE Post Install script](https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install) after setting up a new Node, to remove subscription nag and perform updates.
 
 Each of the nvme drives in each node is set up as a zfs drive as this is what [Proxmox High Availability requires](https://pve.proxmox.com/wiki/High_Availability) to use [storage replication](https://pve.proxmox.com/wiki/Storage_Replication) (in lieu of shared storage).
 

@@ -39,8 +39,8 @@ const config: Config = {
       "classic",
       {
         docs: {
+          routeBasePath: "/", // Serve the docs at the site's root,
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/Samywamy10/homelab-docs/edit/main/",
         },
@@ -112,7 +112,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['hcl'],
+      additionalLanguages: ["hcl"],
     },
   } satisfies Preset.ThemeConfig,
 };
